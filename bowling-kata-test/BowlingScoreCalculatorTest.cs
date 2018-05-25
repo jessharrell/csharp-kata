@@ -75,5 +75,16 @@ namespace bowling_kata_test
             var scoreCalculator = new BowlingScoreCalculator();
             Assert.Equal(13, scoreCalculator.calculateTotalScore(rolls));
         }
+
+        [Fact]
+        public void shouldGiveSpecialBonusWhenSpareIsRolledInTenthFrame()
+        {
+            var firstNineFrames = new List<int>(new int[18]);
+            var tenthFrameTurkey = new List<int> {3, 7, 1};
+            var rolls = firstNineFrames.Concat(tenthFrameTurkey).ToList();
+            
+            var scoreCalculator = new BowlingScoreCalculator();
+            Assert.Equal(11, scoreCalculator.calculateTotalScore(rolls));
+        }
     }
 }
