@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace bowling_kata
 {
@@ -7,7 +8,7 @@ namespace bowling_kata
     {
         public int calculateTotalScore(List<int> rolls)
         {
-            return 0;
+            return rolls.Sum();
         }
     }
 }
