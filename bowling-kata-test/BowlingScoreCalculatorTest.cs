@@ -31,6 +31,49 @@ namespace bowling_kata_test
             var scoreCalculator = new BowlingScoreCalculator();
             Assert.Equal(10, scoreCalculator.calculateTotalScore(rolls));
         }
-        
+
+        [Fact]
+        public void shouldGetTwoBallBonusForStrikeInFirstFrame()
+        {
+            var firstTwoFrames = new List<int> {10, 0, 1, 1};
+            var lastEightFrames = new List<int>(new int[16]);
+            var rolls = firstTwoFrames.Concat(lastEightFrames).ToList();
+            
+            var scoreCalculator = new BowlingScoreCalculator();
+            Assert.Equal(14, scoreCalculator.calculateTotalScore(rolls));
+        }
+
+        [Fact]
+        public void shouldGetTwoBallBonusForStrikeInAnyFrame()
+        {
+            var firstEightFrames = new List<int>(new int[16]);
+            var lastTwoFrames = new List<int> {10, 0, 1, 1};
+            var rolls = firstEightFrames.Concat(lastTwoFrames).ToList();
+            
+            var scoreCalculator = new BowlingScoreCalculator();
+            Assert.Equal(14, scoreCalculator.calculateTotalScore(rolls));
+        }
+
+        [Fact]
+        public void shouldGiveSpecialBonusWhenTurkeyIsRolledInTenthFrame()
+        {
+            var firstNineFrames = new List<int>(new int[18]);
+            var tenthFrameTurkey = new List<int> {10, 10, 10};
+            var rolls = firstNineFrames.Concat(tenthFrameTurkey).ToList();
+            
+            var scoreCalculator = new BowlingScoreCalculator();
+            Assert.Equal(30, scoreCalculator.calculateTotalScore(rolls));
+        }
+
+        [Fact]
+        public void shouldGiveOneBallBonusForSpare()
+        {
+            var firstTwoFrames = new List<int> {3, 7, 1, 1};
+            var lastEightFrames = new List<int>(new int[16]);
+            var rolls = firstTwoFrames.Concat(lastEightFrames).ToList();
+            
+            var scoreCalculator = new BowlingScoreCalculator();
+            Assert.Equal(13, scoreCalculator.calculateTotalScore(rolls));
+        }
     }
 }
