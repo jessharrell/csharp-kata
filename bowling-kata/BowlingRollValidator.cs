@@ -12,12 +12,18 @@ namespace bowling_kata
             {
                 errorFunc(ErrorCode.NotEnoughRolls);
                 return "Failure";
-            } 
+            }
+            else if (rolls.Count == 21 && rolls[19] + rolls[20] < 10)
+            {
+                errorFunc(ErrorCode.UnEarnedBonusInTenth);
+                return "Failure";
+            }
             else if (rolls.Count > 21)
             {
                 errorFunc(ErrorCode.TooManyRolls);
                 return "Failure";
             }
+
             return successFunc();
         }
     }

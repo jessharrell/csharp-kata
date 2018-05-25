@@ -3,6 +3,7 @@
     public enum ErrorCode
     {
         NotEnoughRolls,
-        TooManyRolls
+        TooManyRolls,
+        UnEarnedBonusInTenth
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using bowling_kata;
 using Moq;
 using Xunit;
@@ -53,13 +54,26 @@ namespace bowling_kata_test
         public void shouldCallFailureFunctionWithTooManyRollsErrorCodeWhenGivenListOf22Zeros()
         {
             var mockWithCallbacks = new Mock<CallbackInterface>();
-            var rolls = new List<int>(new int[22]);
+            var rolls = new List<int>(new int[22]).Select( r => r + 5).ToList();
             var validator = new BowlingRollValidator();
             
             validator.validate(rolls, mockWithCallbacks.Object.SuccessCallback,
                 mockWithCallbacks.Object.FailureCallback);
             
             mockWithCallbacks.Verify(m => m.FailureCallback(ErrorCode.TooManyRolls));
+        }
+
+        [Fact]
+        public void shouldCallFailureFuncWithUnEarnedBonusInTenthWhenGivenTwentyOnePinsWithoutSpareOrStrikeInTenthFrame()
+        {
+            var mockWithCallbacks = new Mock<CallbackInterface>();
+            var rolls = new List<int>(new int[21]);
+            var validator = new BowlingRollValidator();
+            
+            validator.validate(rolls, mockWithCallbacks.Object.SuccessCallback,
+                mockWithCallbacks.Object.FailureCallback);
+            
+            mockWithCallbacks.Verify(m => m.FailureCallback(ErrorCode.UnEarnedBonusInTenth));
         }
     }
 }
