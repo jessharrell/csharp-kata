@@ -23,5 +23,32 @@ namespace word_chain_test
             var actualChain = chainCreator.createChain(givenList);
             Assert.Equal(givenList, actualChain);
         }
+
+        [Fact]
+        public void givenTwoWordsWithOneLetterDifferenceShouldReturnGivenList()
+        {
+            var chainCreator = new ChainCreator();
+            var givenList = new List<string>{"food", "good"};
+            var actualChain = chainCreator.createChain(givenList);
+            Assert.Equal(givenList, actualChain);
+        }
+
+        [Fact]
+        public void givenListOfMoreThanTwoWordsThenReturnEmptyList()
+        {
+            var chainCreator = new ChainCreator();
+            var givenList = new List<string>{"food", "good", "fork"};
+            var actualChain = chainCreator.createChain(givenList);
+            Assert.Equal(new List<string>(), actualChain);
+        }
+
+        [Fact]
+        public void givenListWithTwoWordsOfDifferentLengthsThenReturnEmptyList()
+        {
+            var chainCreator = new ChainCreator();
+            var givenList = new List<string>{"food", "yum"};
+            var actualChain = chainCreator.createChain(givenList);
+            Assert.Equal(new List<string>(), actualChain);
+        }
     }
 }
