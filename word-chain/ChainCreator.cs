@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace word_chain
 {
@@ -7,17 +8,20 @@ namespace word_chain
     {
         public List<string> createChain(List<string> list)
         {
-            if (list.Count == 2)
+            return convertToValidInput(list);
+        }
+
+        public List<string> convertToValidInput(List<string> list)
+        {
+            switch (list.Count)
             {
-                if (list[0].Length != list[1].Length)
-                {
+                case 1:
+                    return new List<string> {list[0], list[0]};
+                case 2 when list[0].Length == list[1].Length:
+                    return list;
+                default:
                     return new List<string>();
-                }
-                
-                return list;
             }
-            
-            return list.Count == 1 ? list : new List<string>();
         }
     }
 }

@@ -16,12 +16,12 @@ namespace word_chain_test
         }
 
         [Fact]
-        public void shouldReturnGivenListWhenItContainsOnlyOneWord()
+        public void shouldReturnChainOfGivenWordWhenItContainsOnlyOneWord()
         {
             var chainCreator = new ChainCreator();
             var givenList = new List<string>{"food"};
             var actualChain = chainCreator.createChain(givenList);
-            Assert.Equal(givenList, actualChain);
+            Assert.Equal(new List<string>{"food", "food"}, actualChain);
         }
 
         [Fact]
