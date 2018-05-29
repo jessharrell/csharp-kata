@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bowling-kata", "bowling-kat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bowling-kata-test", "bowling-kata-test\bowling-kata-test.csproj", "{51DD1E29-F750-4FBA-AB9F-C39128FA5A41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "word-chain-test", "word-chain-test\word-chain-test.csproj", "{19E3C966-9895-4004-8FD2-32D60CDC5C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "word-chain", "word-chain\word-chain.csproj", "{EC8375F9-8E92-4B30-A3AA-9E4278A65928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{51DD1E29-F750-4FBA-AB9F-C39128FA5A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51DD1E29-F750-4FBA-AB9F-C39128FA5A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51DD1E29-F750-4FBA-AB9F-C39128FA5A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19E3C966-9895-4004-8FD2-32D60CDC5C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19E3C966-9895-4004-8FD2-32D60CDC5C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19E3C966-9895-4004-8FD2-32D60CDC5C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19E3C966-9895-4004-8FD2-32D60CDC5C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8375F9-8E92-4B30-A3AA-9E4278A65928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8375F9-8E92-4B30-A3AA-9E4278A65928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8375F9-8E92-4B30-A3AA-9E4278A65928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8375F9-8E92-4B30-A3AA-9E4278A65928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
